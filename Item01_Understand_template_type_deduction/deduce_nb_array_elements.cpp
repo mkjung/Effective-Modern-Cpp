@@ -17,12 +17,31 @@ constexpr std::size_t arraySize(T (&)[N]) noexcept  // below on
     return N;                                       // and
 }                                                   // noexcept
 
+#include <iostream>
+#include <algorithm>
 
-int keyVals[] = { 1, 3, 7, 9, 11, 22, 35 };  // keyVals has
-                                             // 7 elements
+int main()
+{
+    int keyVals[] = { 1, 3, 7, 9, 11, 22, 35 };  // keyVals has
+                                                 // 7 elements
 
-int mappedVals1[arraySize(keyVals)];         // so does
-                                             // mappedVals
+    std::cout << "arraySize of keyVals[] is " << arraySize(keyVals) << '\n';
 
-std::array<int, arraySize(keyVals)> mappedVals2;  // mappedVals'
-                                                  // size is 7
+    int mappedVals1[arraySize(keyVals)];         // so does
+                                                 // mappedVals
+    std::copy(keyVals, keyVals + arraySize(keyVals), mappedVals1);
+
+    std::array<int, arraySize(keyVals)> mappedVals2;  // mappedVals'
+                                                      // size is 7
+    std::copy(keyVals, keyVals + arraySize(keyVals), mappedVals2.begin());
+
+    std::cout << "mappedVals1 =>" << '\n';
+    for (int value : mappedVals1) {
+        std::cout << value << '\n';
+    }
+
+    std::cout << "mappedVals2 =>" << '\n';
+    for (int value : mappedVals2) {
+        std::cout << value << '\n';
+    }
+}
