@@ -6,6 +6,7 @@
  *   will take place.  In particular, it means that compilers will deduce the
  *   function's return type from the function's implementation.
  */
+void authenticateUser() {}
 
 template<typename Container, typename Index>  // C++14 only, and
 auto authAndAccess(Container& c, Index i)     // not quite
