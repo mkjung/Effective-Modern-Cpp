@@ -18,6 +18,7 @@ void processWidget(Widget& w, bool p)
 std::vector<bool> features(const Widget& w)
 {
   std::cout << "features(const Widget&)" << std::endl;
+  return std::vector<bool>{};
 }
 
 int main()
