@@ -18,7 +18,7 @@ int x;
 template<typename It>   // algorithm to dwim ("do what I mean")
 void dwim(It b, It e)   // for all elements in range from
 {                       // b to e
-  while (b != e) {
+    for (; b != e; ++b) {
     typename std::iterator_traits<It>::value_type
       currValue = *b;
     // ...
@@ -36,3 +36,8 @@ std::function<bool(const std::unique_ptr<Widget>&,
   derefUPLess = [](const std::unique_ptr<Widget>& p1,
                    const std::unique_ptr<Widget>& p2)
                   { return *p1 < *p2; };
+
+int main()
+{
+    return 0;
+}
