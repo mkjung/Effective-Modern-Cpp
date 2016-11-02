@@ -12,9 +12,9 @@
 
 class Widget {};
 
-int    f1(std::shared_ptr<Widget> spw) { std::cout << "f1" << std::endl; }  // call these only when
-double f2(std::unique_ptr<Widget> upw) { std::cout << "f2" << std::endl; }  // the appropriate
-bool   f3(Widget* pw) { std::cout << "f3" << std::endl; }                   // mutex is locked
+int    f1(std::shared_ptr<Widget> spw) { std::cout << "f1" << std::endl; return 0; }   // call these only when
+double f2(std::unique_ptr<Widget> upw) { std::cout << "f2" << std::endl; return 0.0; } // the appropriate
+bool   f3(Widget* pw) { std::cout << "f3" << std::endl; return true; }                 // mutex is locked
 
 int main()
 {
